@@ -1,10 +1,12 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:untitled19/data/model/LoginRequest.dart';
-import 'package:untitled19/data/model/LoginResponse.dart';
-import 'package:untitled19/data/model/RegisterRequests.dart';
-import 'package:untitled19/data/model/RegisterResponse.dart';
+import 'package:untitled19/data/model/Requests/LoginRequest.dart';
+import 'package:untitled19/data/model/responses/CategoryOrBrandResponses.dart';
+
+import 'package:untitled19/data/model/responses/LoginResponse.dart';
+import 'package:untitled19/data/model/Requests/RegisterRequests.dart';
+import 'package:untitled19/data/model/responses/RegisterResponse.dart';
 
 import 'end_points.dart';
 
@@ -45,6 +47,32 @@ class ApiManager {
       return LoginResponse.fromJson(json);
     } catch (e) {
       throw e;
+    }
+  }
+
+  static Future<CategoryOrBrandResponses> getAllCategories() async {
+    Uri url = Uri.http(baseUrl, Endpoints.getAllCategories);
+    try {
+      var response = await http.get(url);
+      var bodyString = response.body;
+      var json = jsonDecode(bodyString);
+      return CategoryOrBrandResponses.fromJson(
+          json); // Return the created instance
+    } catch (e) {
+      throw e; // Re-throw the caught exception
+    }
+  }
+
+  static Future<CategoryOrBrandResponses> getAllBrands() async {
+    Uri url = Uri.http(baseUrl, Endpoints.getAllBrands);
+    try {
+      var response = await http.get(url);
+      var bodyString = response.body;
+      var json = jsonDecode(bodyString);
+      return CategoryOrBrandResponses.fromJson(
+          json); // Return the created instance
+    } catch (e) {
+      throw e; // Re-throw the caught exception
     }
   }
 }

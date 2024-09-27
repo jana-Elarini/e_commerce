@@ -55,7 +55,7 @@ class _HomeScreenState extends State<SignInScreen> {
               children: [
                 Align(
                   alignment: Alignment.center,
-                  child: Image.asset('assets/images/Group 5.png'),
+                  child: Image.asset('assets/images/routeblue.png'),
                 ),
                 SizedBox(height: 50.0),
                 Text('Welcome Back To Route',
@@ -155,7 +155,7 @@ class _HomeScreenState extends State<SignInScreen> {
                       style: GoogleFonts.poppins(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.primaryColor,
+                        color: Color(0xff01366a),
                       ),
                     ),
                     style: ElevatedButton.styleFrom(

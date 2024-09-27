@@ -55,7 +55,7 @@ class _SignUpState extends State<SignUpScreen> {
                   children: [
                     Align(
                       alignment: Alignment.center,
-                      child: Image.asset('assets/images/Group 5.png'),
+                      child: Image.asset('assets/images/routeblue.png'),
                     ),
                     SizedBox(height: 50.0),
                     Text(
@@ -207,7 +207,7 @@ class _SignUpState extends State<SignUpScreen> {
                           style: GoogleFonts.poppins(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.primaryColor,
+                            color: Color(0xff01366a),
                           ),
                         ),
                         style: ElevatedButton.styleFrom(
